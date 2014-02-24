@@ -24,8 +24,6 @@
             var scene = new THREE.Scene();
             scene.add(camera);
             camera.position.z = 300;
-            renderer.setSize(W, H);
-            $('body').append(renderer.domElement);
 
             var pointLight = new THREE.PointLight(0xFFFFFF);
             pointLight.position.z = 1000;
@@ -44,6 +42,8 @@
                 scene.add(companionCube);
             });
 
+            renderer.setSize(W, H);
+            $('body').append(renderer.domElement);
             function render() {
                 requestAnimationFrame(render);
 
