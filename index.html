@@ -17,12 +17,9 @@
         <script src='OBJMTLLoader.js'></script>
         <script>
             var W = 600, H = 600;
-            var VIEW_ANGLE = 45, ASPECT = W / H, NEAR = 0.1, FAR = 10000;
 
             var renderer = new THREE.WebGLRenderer({alpha: true});
-            var camera = new THREE.PerspectiveCamera(
-                VIEW_ANGLE, ASPECT, NEAR, FAR
-            );
+            var camera = new THREE.PerspectiveCamera(45, W / H, 0.1, 10000);
 
             var scene = new THREE.Scene();
             scene.add(camera);
