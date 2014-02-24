@@ -37,15 +37,14 @@
             var loader = new THREE.OBJMTLLoader();
             var companionCube;
             loader.load('resources/WeightedCompanionCubeHearted.obj', 'resources/cube.mtl', function(cube) {
-                var texture = THREE.ImageUtils.loadTexture('resources/metal_box.jpg', {}, function() {
-                    companionCube = cube;
+                var texture = THREE.ImageUtils.loadTexture('resources/metal_box.jpg');
+                companionCube = cube;
 
-                    for (var i = 0, l = companionCube.children[0].children.length; i < l; ++i) {
-                        companionCube.children[0].children[i].material.map = texture;
-                    }
-                    companionCube.position.z = 290;
-                    scene.add(companionCube);
-                });
+                for (var i = 0, l = companionCube.children[0].children.length; i < l; ++i) {
+                    companionCube.children[0].children[i].material.map = texture;
+                }
+                companionCube.position.z = 290;
+                scene.add(companionCube);
             });
 
             function render() {
